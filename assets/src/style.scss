@@ -1,0 +1,943 @@
+$grid-breakpoints: (
+    xs: 0,
+    sm: 480px,
+    md: 768px,
+    lg: 1133px,
+    xl: 1688px
+  );
+$container-max-widths: (
+  sm: 480px,
+  md: 768px,
+  lg: 1133px,
+  xl: 1688px
+);
+
+@import " ../../../../node_modules/bootstrap/scss/bootstrap";
+
+
+$gray-600: #666;
+
+body{
+    margin: 0;
+}
+
+#drug{
+    // height: 41.81%; margin-bottom: -20px;
+        margin-bottom: -20px;
+    &:after{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        background: linear-gradient(rgba(243,249,255,.8), rgba(243,249,255,.8)), url('img/Слой 12.png') no-repeat;
+        background-color: #e2e2e2;
+    }
+    .container, .row{
+        height: 100%;
+        position: relative; 
+        z-index: 2;
+    }
+    
+    #legs{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        &:after{
+            content: '';
+            position: absolute;
+            right: 0;
+            background: url('img/all_mikocin.png') no-repeat;
+            background-size: 100%;
+        }
+        div:first-child{
+            font-weight: bold;
+        }
+        .drug-price{
+            display: none;
+            span{
+                position: relative;
+            }
+        }
+    }
+    .drug-price{
+        span{
+            color: #fff;
+            z-index: 3;
+            font-weight: bold;
+        }
+    }
+    
+    .shootouts{
+        margin-bottom: 45px;
+        div{
+            display: flex;
+            margin-top: 20px;
+        }
+        div:nth-child(3){
+            margin-top: 25px;
+        }
+        p{
+            line-height: 18px;
+            font-style: italic;
+            margin-bottom: 0;
+            align-self: flex-end;
+        }
+        img{
+            margin-right: 12px;
+        }
+    }
+    #mikocin-description main{
+        display: flex;
+        margin-bottom: 20px;
+    }
+    .drug-description{
+        h2{
+            font-weight: 900;
+            margin-bottom: 38px;
+            small{
+                font-weight: 700;
+            }
+            .green-line::after, .red-line::after{
+                height: 5px;
+            }
+        }
+        h2:first-child{
+            display: none;
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            display: flex;
+            margin-top: 34px;
+            .green-line::after, .red-line::after{
+                height: 3px;
+            }
+        }
+        li:nth-child(2) div{
+            position: relative;
+            &::before{
+                content: '';
+                position: absolute;
+                left: 20px;
+                display: block;
+                z-index: 3;
+                top: -30px;
+                height: 130px;
+                width: 9px;
+                background: url(img/arrow-up.png) 0 0 no-repeat;
+            }
+        }
+        .circle{
+            width: 47px;
+            height: 47px;
+            background-color: #a7c93d;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 20px;
+            padding-top: 7px;
+            font-weight: bold;
+            align-self: center;
+            text-align: center;
+            box-shadow: 0 0 0 5px #e8edc9, 0 0 0 2px #e8edc9;
+            margin-right: 18px;
+        }
+        p{
+            margin: 0;
+            line-height: 18px;
+            color: #444;
+            font-weight: 500;
+            b{
+                color: #000;
+            }
+        }
+    }
+    
+    .delivery{
+        border: 6px solid #a8ca3f;
+        border-radius: 12px;
+        background-color: #fff;
+        position: relative;
+        width: 270px;
+        .title{
+            border-bottom: 6px solid #a8ca3f;
+            border-right: 6px solid #a8ca3f;
+            border-left: 6px solid #a8ca3f;
+            border-radius: 0 0 12px 12px;
+            background-color: #edf5fc;
+            width: 140px;
+            font-size: 16px;
+            line-height: 13px;
+            padding-bottom: 10px;
+            position: relative;
+            top: -6px;
+            left: 60px;
+            img{
+                margin: 0 5px;
+            }
+        }
+        form{
+            padding: 0 20px;
+            h5{
+                padding: 5px 25px 0;
+                line-height: 22px;
+                text-align: center;
+                span{
+                    color: #ff6b00;
+                }
+            }
+            .price{
+                margin: 0;
+                padding: 0 12px;
+                font-size: 14px;
+                div:nth-child(3), div:nth-child(4){
+                    height: 37px;
+                    font-size: 32px;
+                    line-height: 37px;
+                }
+                div:nth-child(4){
+                    background-color: #ffcb02;
+                    border-radius: 6px;
+                    font-weight: bold;
+                    padding: 0 3px;
+                }
+                div{
+                    text-align: center;
+                }
+                i{font-size: 28px;}
+                img{
+                    position: relative;
+                    top: -41px;
+                }
+            }
+            input{
+                margin-top: 10px;
+                width: 100%;
+                border: 1px solid #eef2f7;
+                background-color: #eef2f7;
+                font:400 16px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                border-radius: 21px/21px;
+                height: 42px;
+            }
+            #customer{
+                background: #eef2f7 url('img/customer.svg') no-repeat 21px;
+                padding-left:55px;
+            }
+            #phone{
+                background: #eef2f7 url('img/phone.svg') no-repeat 21px;
+                padding-left:55px;
+                &+div{
+                    background-color: #ffbf02;
+                    padding: 5px;
+                    border-radius: 33px/33px;
+                    margin: 14px 0;
+                }
+            }
+            button{
+                background-color: #ffbf02; 
+                border: 2px solid #ffd148;
+                width: 100%;
+                border-radius: 21px/21px;
+                height: 38px;
+                font: bold 24px/14px -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                span{
+                    font-size: 14px;
+                }
+            }
+            p{
+                font-size: 16px;
+                line-height: 14px;
+                text-align: center;
+                color: #333;
+                margin: 14px 0;
+                span{color: #9dbd39;}
+            }
+            footer{
+                text-align: center;
+                margin: 0 -20px;
+                background-color: #eef2f7;
+                font-size: 14px;
+                line-height: 16px;
+                border-radius:0 0 6px 6px;
+                border: 0.1px solid #eef2f7;
+                padding: 5px 0;
+            }
+        }
+    }
+    #arrow{
+        display: none;
+        position: absolute;
+        img{
+            width: 50px;
+        }
+    }
+    #small-drug{
+        margin: 20px 0;
+        width: 100%;
+        border: 4px solid #a8ca3f;
+        border-radius: 10px;
+        background-color: #fff;
+        position: relative;
+        img{
+            width: 100%;
+            padding: 10px 10px 0px;
+        }
+        .drug-price{
+            span{
+                position: absolute;
+                font-size: 14px;
+                padding: 0 3px;
+                border-radius: 5px;
+            }
+            span:first-child{
+                background-color: #ff6b00;
+                top: 10px;
+                left: 120px;
+            }
+            span:last-child{
+                background-color: #a7c93d;
+                top: 60px;
+                left: 160px;
+            }
+        }
+    }
+}
+.red-line, .green-line{
+    position: relative;
+    z-index: 1;
+}
+.red-line::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    background-color: #ff6b00;
+    bottom: -1px;
+    left: 0;
+    z-index: -1;
+}
+.green-line::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    background-color: #a7c93d;
+    bottom: -1px;
+    left: 0;
+    z-index: -1;
+}
+.wave{
+    height: 20px;
+    position: relative;
+    z-index: 1;
+}
+.wave::before, .wave::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-repeat: repeat;
+}
+.wave::before{
+    height: 10px;
+    background-size: 40px 100px;
+    background-image:
+    radial-gradient(circle at 20px -42px, transparent 50px, white 51px);
+    }
+.wave::after{
+    height: 15px;
+    background-size: 80px 100px;
+    background-image:
+    radial-gradient(circle at 20px 56px, white 50px, transparent 51px);
+    }
+#disease{
+    #flowers{
+        padding: 33px 0 30px;
+        text-align: center;
+    }
+    h2{
+        text-align: center;
+        font-weight: 700;
+        padding-bottom: 40px;
+    } 
+}
+.card-deck{
+    counter-reset: section;
+}
+.card-img-top{ 
+    h5{
+        display: inline-block;
+        margin: 0;
+        font-weight: 700;
+        &:nth-child(4){
+            display: none;
+        }
+    }
+
+    img[alt*='sick']+h5{
+        position: relative;
+        top: 18px;
+    }
+}
+.img-circle{
+    position: absolute;
+    left: -25px;
+    top: -27px;
+    width: 212px;
+    height: 212px;
+    transform: rotate(170deg);
+}
+.paint-circle{
+    fill: transparent;
+    stroke-width: 8px;
+    stroke: #ec9a6a;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 170, 470;
+}
+.paint-circle {
+    animation-name: paintCircle;
+    animation-duration: 1s;
+}
+@keyframes paintCircle{
+    0% {stroke-dasharray: 0, 640;}
+    100% { stroke-dasharray: 170, 470;}
+}
+.img-number{
+    position: absolute;
+    top: -8px;
+    left: 120px;
+    width: 50px;
+    height: 50px;
+    background-color: #ec9a6a;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: none;
+}
+.img-number::after{
+    content: counter(section);
+    counter-increment: section;
+    font-size: 26px;
+    color: #fff;
+}
+
+.card-body{
+    padding: 20px 0;
+}
+.card-body::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 3px;
+    width: 50px;
+    background: #becbd8;
+}
+.card:hover .card-body::before {
+    background: #f4d3bb;
+}
+.card-text{
+    font-size: 18px;
+    color: #444;
+    margin-top: 20px;
+}
+.card{
+    border: 0;
+}
+.rating{
+    margin: 60px 0 0 10px;
+    border: 3px solid #f3d3bb;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 22px;
+    line-height: 24px;
+    padding: 40px 0;
+    position: relative;
+    &:before {
+        content: "";
+        position: absolute;
+        top: -18px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        background: url(img/rating.svg) no-repeat center center;
+        width: 55px;
+        height: 37px;
+        background-color: #fff;
+        z-index: 3;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        top: -7px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 100px;
+        height: 10px;
+        background: #fff;
+        z-index: 2;
+    }
+    // div{
+    //     margin: 0 auto;
+    //     width: 170px;
+    //     position: relative;
+    //     top: -29px;
+    //     background-color: #fff;
+
+    // }
+} 
+@media(max-width:479px){
+    .drug-description{
+        h2{
+            font-size: 26px;
+        }
+    }
+    .card-body{
+        text-align: center;
+    }
+    .card-body::before {
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+}
+@media(min-width:350px){
+    #drug #small-drug .drug-price{
+        
+        span:first-child{
+            left: 170px;
+        }
+        span:last-child{
+            top: 80px;
+            left: 210px;
+        }
+    }
+}
+@media(min-width:480px){
+    .card-deck .card {
+        flex: 1 0 30%;
+    }
+    #drug #small-drug .drug-price{
+        
+        span:first-child{
+            left: 220px;
+        }
+        span:last-child{
+            top: 95px;
+            left: 280px;
+        }
+    }
+    
+}
+@media(max-width:767px){ 
+    #drug{
+        .shootouts{
+            display: none;
+        }
+        
+        #mikocin-description, .drug-description{
+            width: 100%;
+        }
+        #mikocin-description main{
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .drug-description{
+            h2{
+                font-size: 34px;
+                line-height: 1;
+                text-align: center;
+            }
+            li{
+                margin-top: 20px;
+                justify-content: center;
+            }
+            li:last-child{
+                margin-left: -35px;
+            }
+        }
+        .delivery, #small-drug{
+            align-self: center;
+        }
+    }
+    #disease{
+        h2{
+            font-size: 26px;
+            line-height: 1;
+            span{
+                font-size: 20px;
+            }
+        }
+    }
+    
+    .card-img-top{ 
+        h5{ 
+            font-weight: 500;
+        }
+        img{
+            margin-left: 30px;
+        }
+    } 
+    .img-circle{
+        left: 5px;
+    }
+    .img-number{
+        left: 150px;
+    }
+    
+    .card-text{
+        font-size: 16px;
+    } 
+    .rating {
+        margin: 30px 0 0;
+        font-size: 16px;
+        padding: 20px 0;
+        line-height: normal;
+    } 
+}
+@media(min-width:768px){
+    #drug{ 
+        .shootouts{
+            display: flex;
+        }
+        
+        #mikocin-description main{
+            display: grid;
+            grid-template-columns: 60% 40%;
+        }
+        .drug-description{
+            h2{
+                font-size: 34px;
+                text-align: left;
+            }
+            li{
+                margin-top: 34px;
+            }
+            img{
+                display: none;
+            }
+            li:nth-child(2) div::before {
+                background: url(img/arrow-up.svg);
+                top: -45px;
+            }
+        }
+        #small-drug{
+            order: 1;
+            width: 100%;
+            grid-column: 1/-1;
+            .drug-price span {
+                font-size: 34px;
+                &:first-child{
+                    left: 330px;
+                }
+                &:last-child{
+                    top: 150px;
+                    left: 430px;
+                }
+            }
+        }
+
+    }
+    #disease{
+        h2{
+            line-height: normal; 
+        }
+    }
+    .card-deck .card {
+        flex: 1 0 0%;
+    }
+}
+@media(max-width:1132px){
+    #drug{
+        background-color: #f3f9ff;
+        #legs{
+            width: 100%;
+            align-items: center;
+            
+            div:first-child{
+                font-size: 32px;
+                padding: 30px 0 10px;
+            }
+            img{
+                margin-right: 0;
+            }
+        }
+    }
+}
+@media(min-width:1133px){
+    body{
+        height: 1100px;
+    }
+    #drug{ 
+        background-color: transparent;
+        margin-bottom: -130px;
+        &:after{
+            left: -140px;
+            height: 460px;
+            background-size: 61.84% 460px;
+        }
+        #legs{
+            width: 45%; 
+            
+            align-items: flex-end;
+            
+            div:first-child{
+                font-size: 16px;
+                padding: 14px 35px 0 0; 
+            }
+            img{
+                margin-right: 17px;
+            } 
+            &:after{
+                left: -280px;
+                top: -150px;
+                bottom: -93px;
+                background-size: 77%;
+            }
+            .drug-price{
+                span{
+                    font-size: 24px;
+                }
+                span:first-child{
+                    top: 240px;
+                    left: -40px;
+                }
+                span:last-child{
+                    top: 327px;
+                    left: -35px;
+                }
+            }
+        }
+        #mikocin-description main{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        #mikocin-description{
+            width: 55%;
+            &>main{
+                height: 440px;
+            }   
+        }
+        .shootouts{
+            div:nth-child(2){
+                margin: 23px 5px 0;
+            }
+            p{font-size: 14px;}
+        }
+        .drug-description{
+            width: calc(100% - 250px);
+            h2{
+                font-size: 38px;
+                line-height: 34px;
+                small{
+                    font-size: 30px;
+                }
+            }
+            li:nth-child(3){
+                margin-left: 40px;
+            }
+            img{
+                top: -186px;
+                height: 115px;
+            }
+        }
+        .delivery{
+            width: 250px;
+            .title{left: 50px;}
+            form{
+                padding: 0 10px;
+                footer{
+                    margin: 0 -10px;
+                }
+            }
+        }
+        #arrow{
+            top: 270px;
+            right: -20px;
+            height: 150px;
+            img{height: 150px;}
+        }
+
+    }
+    #disease{
+        margin-top: 90px;
+        .container{
+            padding: 0 0 0 13.3%;
+        }
+        h2{
+            font-size: 44px;
+            span{
+                font-size: 22px;
+            }
+        }
+    }
+    .card-img-top{
+        img{
+            width: 160px;
+            margin-right: 10px;
+        }
+        h5{
+            font-size: 18px;
+        }
+    }
+    .card-deck{
+        .card:nth-child(2){
+            p{margin-right: -10px;}
+        } 
+    }
+}
+@media(min-width:1688px){
+    body{
+        height: 1639px;
+    }
+    #drug{
+        &:after{
+            left: 0;
+            height: 687px;
+            background-size: 1583px 687px;
+        }
+        .container .row{
+            padding: 0 15.3% 0 0;//0 259px 0 0;//
+        }
+        #legs{
+            width: 52.5%;
+            &:after{
+                left: 0;
+                top: -229px;
+                bottom: -152px;
+                background-size: 100%;
+            }
+            .drug-price{
+                span{
+                    font-size: 34px;
+                }
+            }
+        }
+        #mikocin-description{
+            width: 47.5%;//679px;//
+            &>main{
+                height: 545px;
+            }   
+        }
+        .shootouts{
+            div:nth-child(2){
+                margin: 23px 32px 0;
+            }
+            p{font-size: 16px;}
+            
+        }
+        .drug-description{
+            width: calc(100% - 350px);
+            h2{
+                font-size: 44px;
+                line-height: 40px;
+                small{
+                    font-size: 34px;
+                }
+            }
+            li:nth-child(3){
+                margin-left: 0;
+            }
+            p{
+                font-size: 20px;
+                line-height: 22px;
+            }
+            img{
+                top: -190px;
+                height: 149px;
+            }
+        }
+        .delivery{
+            form{
+                h5{padding-top: 10px;}
+                .price{
+                    margin-bottom: 5px;
+                    div:nth-child(3), div:nth-child(4){
+                        height: 41px;
+                        font-size: 34px;
+                        line-height: 41px;
+                        margin-top: 6px;
+                    }
+                    img{
+                        top: -43px;
+                    }
+                }
+                input{
+                    border-radius: 33px/33px;
+                    height: 64px;
+                }
+                button{
+                    border-radius: 33px/33px;
+                    height: 58px;
+                    font-size: 28px;
+                    line-height: 16px;
+                    span{
+                        font-size: 16px;
+                    }
+                }
+                p{
+                    font-size: 18px;
+                    line-height: 16px;
+                    margin-top: 21px;
+                }
+                footer{
+                    padding: 10px 0;
+                }
+            }
+        }
+        #arrow{
+            top: 270px;
+            right: -30px;
+            height: 231px;
+            img{height: 231px;}
+        }
+    }
+    #disease{
+        margin-top: 90px;
+        .container{
+            padding-left: 15.3%;
+        }
+        h2{
+            font-size: 48px;
+            span{
+                font-size: 24px;
+            }
+        }
+    }
+    .card-img-top{
+        img{
+            width: 188px;
+            margin-right: 20px;
+        }
+        h5{
+            font-size: 22px;
+        }
+        img[alt*='sick']+h5{
+            top: 22px;
+        }
+    }
+    .img-circle{
+        width: 200px;
+        height: 200px;
+    }
+    .img-number {
+        top: -20px;
+        left: 110px;
+        width: 45px;
+        height: 45px;
+    }
+    .card-body{
+        padding: 20px 0 20px 20px;
+    }
+    .card-body::before {
+        top: -13px;
+    }
+    .card-deck{
+        .card:nth-child(2){
+            p{margin-right: 0;}
+        } 
+    }
+}
